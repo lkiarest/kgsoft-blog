@@ -21,7 +21,7 @@ googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = "kgsoft.cn"            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
 [author]                  # essential                     # 必需
-  name = "olOwOlo"
+  name = "qintx"
 
 [sitemap]                 # essential                     # 必需
   changefreq = "weekly"
@@ -59,7 +59,7 @@ copyright = "kgsoft.cn"            # default: author.name ↓        # 默认为
   gitRepo = ""
 
   # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
-  logoTitle = "Qin"        # default: the title value    # 默认值: 上面设置的title值
+  logoTitle = "FE World"        # default: the title value    # 默认值: 上面设置的title值
   keywords = ["Hugo", "theme","even"]
   description = "Hugo theme even example site."
 
@@ -113,6 +113,8 @@ copyright = "kgsoft.cn"            # default: author.name ↓        # 默认为
 
   # Show language selector for multilingual site.
   showLanguageSelector = false
+
+  Author = { name = "qintx" }
 
   [params.publicCDN]        # load these files from public cdn                          # 启用公共CDN，需自行定义
     enable = true
