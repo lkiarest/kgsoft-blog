@@ -1,0 +1,37 @@
+name: Auto Deploy on Tag with rsync and custom port
+
+on:
+  create:
+    tags:
+      - 'release/*'
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    environment: default
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+    - name: Build
+      run: hugo --minify
+    - name: Archive
+      run: tar -czvf site.tar.gz public
+    - name: Deploy
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SERVER_IP: ${{ vars.SERVER_IP }}
+        SERVER_PORT: ${{ vars.SERVER_PORT }}
+        SERVER_USERNAME: ${{ vars.SERVER_USERNAME }}
+      run: |
+        echo "Server IP: $SERVER_IP, Server Port: $SERVER_PORT"
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        cat ~/.ssh/id_rsa
+        ssh-keyscan -t rsa $SERVER_IP -p $SERVER_PORT >> ~/.ssh/known_hosts
+        rsync -avz -e "ssh -p $SERVER_PORT" site.tar.gz $SERVER_USERNAME@$SERVER_IP:/var/www/kgsoft.cn
+        ssh $SERVER_USERNAME@$SERVER_IP -p $SERVER_PORT "cd /var/www/kgsoft.cn; tar -xzvf site.tar.gz; rm site.tar.gz"
