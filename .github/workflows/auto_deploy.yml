@@ -13,9 +13,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
+      uses: actions/setup-hugo@v0.5.0
       with:
-        hugo-version: 'latest'
+        hugo-version: 'extended'
+    - name: Install libsass
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libsass-dev
     - name: Build
       run: hugo --minify
     - name: Archive
