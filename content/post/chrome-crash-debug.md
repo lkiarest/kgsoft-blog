@@ -1,7 +1,7 @@
 +++
 title = '如何调试 chrome 崩溃日志（MAC）'
 date = 2024-12-20T20:15:13+08:00
-draft = true
+draft = false
 tags = ['崩溃', '调试']
 categories = ['技术']
 +++
