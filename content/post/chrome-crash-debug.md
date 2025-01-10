@@ -3,7 +3,7 @@ title = '如何调试 chrome 崩溃日志（MAC）'
 date = 2024-12-20T20:15:13+08:00
 draft = false
 tags = ['崩溃', '调试']
-categories = ['技术']
+categories = ['前端']
 +++
 # 引言
 在使用 Chrome 浏览器的过程中，偶尔会遇到浏览器崩溃的情况。为了找出崩溃的原因并修复问题，我们需要对崩溃后的 .dmp 文件进行详细分析。本文将详细介绍如何从用户的系统中获取崩溃日志文件，使用 minidump_stackwalk 查看浏览器版本信息，下载对应的 symbols 文件，并使用 LLDB 进行详细分析。
