@@ -5,8 +5,6 @@ draft = false
 tags = ['Postman', 'Cookies']
 categories = ['前端']
 +++
-# Run Postman with Chrome Cookies
-
 When testing APIs that require authentication, manually copying cookies from Chrome to Postman can be tedious. Here's how to automatically sync Chrome cookies with Postman.
 
 ## Prerequisites
