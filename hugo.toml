@@ -48,7 +48,11 @@ copyright = 'kgsoft.cn <br><a href="https://beian.miit.gov.cn/" target="_blank" 
   weight = 40
   identifier = "categories"
   url = "/categories/"
-
+[[menu.main]]
+  name = "关于"
+  weight = 50
+  identifier = "about"
+  url = "/about/"
 [params]
   version = "4.x"           # Used to give a friendly message when you have an incompatible update
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
