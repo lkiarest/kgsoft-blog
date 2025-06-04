@@ -64,3 +64,5 @@ Cloudflare R2 CDN 是一款强大的 WordPress 插件，它能轻松地将您的
 
 ### 获取插件
 立即访问 [kgsoft.cn](https://kgsoft.cn) ，联系我们获取 Cloudflare R2 CDN 插件，开始节省托管成本的同时提升网站性能！
+
+网盘下载地址：[百度网盘](https://pan.baidu.com/s/1tjAVOZxv7eJtZ1stZDJL3w?pwd=kagg)
